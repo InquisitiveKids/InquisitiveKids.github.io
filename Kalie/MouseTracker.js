@@ -7,7 +7,8 @@ var sketchProc = function (processingInstance) {
 
         // ----------  Begin   ------------ 
 
-
+        background(130, 52, 130);
+        
         fill(255, 0, 255);
 
         draw = function () {
