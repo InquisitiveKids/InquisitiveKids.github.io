@@ -7,12 +7,17 @@
         <style>
             p{
                 background-color:paleturquoise;
-                font-size:inherit;
+                font-size:large;
+                margin-left:10px;
+            }
+
+            body{
+                background-image:url(https://www.japan-guide.com/thumb/XYZeXYZe2172_1680.jpg);
+                background-size:2800px;
             }
             
             #topimage{
                 width:800px;
-                float:left;
                 border:green 7px solid; 
                 margin-right:7px;
             }
@@ -45,6 +50,22 @@
                 font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 font-weight:lighter;
             }
+
+            #introduction{
+                font-size:20px;
+                width:50%;
+            }
+
+            a{
+                color:rgb(0, 182, 12);
+            }
+
+            #kimonoimg{
+                float:left;
+                border:gold double 3px;
+                border-radius:8px;
+                margin:3px;
+            }
         </style>
     </head>
     <body>
@@ -52,7 +73,7 @@
 
         <img  id = "topimage" src = "https://www.planetware.com/wpimages/2019/10/japan-in-pictures-most-beautiful-places-takachiho-gorge.jpg" alt = "takachiho gorge">
 
-        <h2 id = "title">Travel Places - Japan</h2>
+        <div style = "float:right; margin-right:100px;"><h2 id = "title">Travel Places - Japan</h2>
 
         <a  class = "contents" href = "#introduction">Introduction</a>
         <br>
@@ -62,15 +83,26 @@
         <br>
         <a class = "contents" href = "#history">History</a>
         <br>
-        <a class = "contents" href = "#funfacts">Fun Facts</a>
+        <a class = "contents" href = "#land">Land</a>
+        <br>
+        <a class = "contents" href = "#funfacts">Fun Facts</a></div>
         
 
         <p id = "introduction">
-            <div class = "h">Introduction</div> <br>
+            <span class = "h">Introduction</span> <br>
 
-            Pack up and let's go! We are going to see cherry blossoms, taste fresh peaches, go hiking, see beautiful landscapes, have delicious food, bath in hotsprings, have a super fast ride on a high speed train, and more!
+            Pack up and let's go! We are going to see <a href = "cherryblossoms">cherry blossoms</a>, taste fresh <a href = "peaches/foods">peaches</a>, go hiking, see beautiful <a href = "landforms">landscapes</a>, have delicious food, bath in hotsprings, have a super fast ride on a high speed train, and more!
             Such a place is true, and, you guessed it- we are going to Japan!<br>
-            Japan is the center of techonology, studies, culture, and once a vast empire. 
+            Japan is the center of techonology, studies, culture, and once a vast empire. Millions of people go visit this country each year, to study, jobs, or having an vacation.
+            It is famous for many things.
+        </p>
+
+        <p id = "clothing" style = "float:right; width:70%;">
+            <span class = "h">Clothing</span><br>
+
+            The <i>Kimono</i> is the traditional dressing of the Japanese. Kimonos are made from a wide variety of fibre types, including hemp, linen, silk, crepe (known as chirimen), and figured satin weaves such as rinzu, with a cross collar and wide sleeves. It is made of rectangular pieces of fabric, with a wide belt is rapped around
+            the waist.
+            <img id = "kimonoimg" src = "https://images-na.ssl-images-amazon.com/images/I/71WrUVNCEDL._AC_UL1500_.jpg" width = "200px">
         </p>
     </body>
 </html>
