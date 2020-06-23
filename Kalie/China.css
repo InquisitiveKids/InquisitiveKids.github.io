@@ -1,39 +1,44 @@
 h1 {
-
     color: #e60000;
 }
-table {
 
+table {
     background-color: #e9dbc8;
 }
-.container {
 
+.container {
+    /* height: 800px;
+    width: 800px; */
     position: relative;
 }
+
 #reliefMapChina {
-
+    position: absolute;
+    left: 0;
+    top: 0;
     float: right;
-    width: 800px;    
+    width: 800px;
 }
-#gobiDesertLabel {
 
+#gobiDesertLabel {
     font-family: "Comic Sans MS", cursive, sans-serif;
     position: absolute;
-    top: 383px;
-    left: 1118px;
+    top: 150px;
+    left: 470px;
     z-index: 2;
-    -webkit-transform: rotate(-20deg); /* Chrome, Safari, Opera */
+    -webkit-transform: rotate(-20deg);
+    /* Chrome, Safari, Opera */
 }
-#tibetanPlateauLabel {
 
+#tibetanPlateauLabel {
     font-family: "Comic Sans MS", cursive, sans-serif;
     position: absolute;
     top: 680px;
     left: 888px;
     z-index: 2;
 }
-#tarimBasinLabel {
 
+#tarimBasinLabel {
     font-family: "Comic Sans MS", cursive, sans-serif;
     position: absolute;
     top: 560px;
@@ -41,8 +46,8 @@ table {
     z-index: 2;
     -webkit-transform: rotate(+18deg);
 }
-#junggarBasinLabel {
 
+#junggarBasinLabel {
     font-family: "Comic Sans MS", cursive, sans-serif;
     position: absolute;
     top: 515px;
@@ -50,16 +55,16 @@ table {
     z-index: 2;
     -webkit-transform: rotate(+38deg);
 }
-#sichuanBasinLabel {
 
+#sichuanBasinLabel {
     font-family: "Comic Sans MS", cursive, sans-serif;
     position: absolute;
     top: 815px;
     left: 1100px;
     z-index: 2;
 }
-#quaidamBasinLabel {
 
+#quaidamBasinLabel {
     font-family: "Comic Sans MS", cursive, sans-serif;
     position: absolute;
     top: 600px;
@@ -67,8 +72,8 @@ table {
     z-index: 2;
     -webkit-transform: rotate(+20deg);
 }
-#taklimakanDesertLabel {
 
+#taklimakanDesertLabel {
     font-family: "Comic Sans MS", cursive, sans-serif;
     position: absolute;
     top: 600px;
