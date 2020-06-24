@@ -44,104 +44,6 @@ var sketchProc = function(processingInstance) {
 
 
 
-        /*
-            This function draws the piggy on the start sense. 
-            We can modify it to other picture. Or, we can just
-            draw a image here. It is probably easier. 
-        */
-        var drawPiggyBank = function(x, y, s) {
-            stroke(0, 0, 0);
-            strokeWeight(2 * s);
-            fill(250, 195, 202);
-            pushMatrix();
-            translate(10 * s, 0);
-            arc(x - 100 * s, y - 40 * s, 50 * s, 40 * s, 20, 240);
-            line(x - 100 * s, y - 40 * s, x - 80 * s, y - 38 * s);
-            beginShape();
-            vertex(x - 101 * s, y - 40 * s);
-            vertex(x - 90 * s, y - 60 * s);
-            vertex(x - 114 * s, y - 57 * s);
-            endShape();
-            popMatrix();
-            pushMatrix();
-            translate(5 * s, -10 * s);
-            pushMatrix();
-            translate(x + 30 * s, y + 50 * s);
-            rotate(-20);
-            noStroke();
-            rect(0, 0, 40 * s, 40 * s);
-            popMatrix();
-            stroke(0, 0, 0);
-            arc(x + 62 * s, y + 79 * s, 40 * s, 30 * s, -20, 160);
-            line(x + 34 * s, y + 61 * s, x + 44 * s, y + 87 * s);
-            line(x + 67 * s, y + 38 * s, x + 81 * s, y + 73 * s);
-            popMatrix();
-            pushMatrix();
-            translate(25 * s, -10 * s);
-            pushMatrix();
-            translate(x - 70 * s, y + 40 * s);
-            rotate(20);
-            noStroke();
-            rect(0, 0, 40 * s, 40 * s);
-            popMatrix();
-            stroke(0, 0, 0);
-            arc(x - 65 * s, y + 82 * s, 40 * s, 30 * s, 20, 200);
-            line(x - 70 * s, y + 40 * s, x - 84 * s, y + 77 * s);
-            line(x - 35 * s, y + 58 * s, x - 46 * s, y + 88 * s);
-            popMatrix();
-            ellipse(x, y, 200 * s, 150 * s);
-            pushMatrix();
-            translate(x - 70 * s, y + 40 * s);
-            rotate(20);
-            noStroke();
-            rect(0, 0, 40 * s, 40 * s);
-            popMatrix();
-            stroke(0, 0, 0);
-            arc(x - 65 * s, y + 82 * s, 40 * s, 30 * s, 20, 200);
-            line(x - 70 * s, y + 40 * s, x - 84 * s, y + 77 * s);
-            line(x - 36 * s, y + 63 * s, x - 46 * s, y + 88 * s);
-            pushMatrix();
-            translate(-10 * s, 5 * s);
-            pushMatrix();
-            translate(x + 30 * s, y + 50 * s);
-            rotate(-20);
-            noStroke();
-            rect(0, 0, 40 * s, 40 * s);
-            popMatrix();
-            stroke(0, 0, 0);
-            arc(x + 62 * s, y + 79 * s, 40 * s, 30 * s, -20, 160);
-            line(x + 34 * s, y + 61 * s, x + 44 * s, y + 87 * s);
-            line(x + 67 * s, y + 38 * s, x + 81 * s, y + 73 * s);
-            popMatrix();
-            pushMatrix();
-            translate(x + 80 * s, y + 11 * s);
-            rotate(-10);
-            ellipse(0, 0, 70 * s, 50 * s);
-            ellipse(5 * s, 2 * s, 60 * s, 46 * s);
-            popMatrix();
-            beginShape();
-            vertex(x + 20 * s, y - 25 * s);
-            vertex(x + 25 * s, y - 50 * s);
-            vertex(x + 35 * s, y - 40 * s);
-            endShape();
-            beginShape();
-            vertex(x + 65 * s, y - 50 * s);
-            vertex(x + 75 * s, y - 65 * s);
-            vertex(x + 80 * s, y - 40 * s);
-            endShape();
-            noStroke();
-            fill(0);
-            ellipse(x + 50 * s, y - 20 * s, 10 * s, 10 * s);
-            ellipse(x + 75 * s, y - 25 * s, 10 * s, 10 * s);
-            ellipse(x + 100 * s, y + 10 * s, 10 * s, 20 * s);
-            ellipse(x + 80 * s, y + 13 * s, 10 * s, 20 * s);
-            noFill();
-            stroke(0);
-            strokeWeight(5 * s);
-            strokeCap(SQUARE);
-            arc(x, y - 40 * s, 100 * s, 50 * s, 255, 315);
-        };
-
         var PiggyBank = function(x, y, s) {
             this.x = x;
             this.y = y;
@@ -154,7 +56,6 @@ var sketchProc = function(processingInstance) {
                 pushMatrix();
                 translate(this.x, this.y);
                 rotate(this.r);
-                drawPiggyBank(0, 0, this.s);
                 popMatrix();
             };
 
@@ -171,11 +72,11 @@ var sketchProc = function(processingInstance) {
 
             this.pack = function() {
                 this.draw();
-                this.shake();
+                //this.shake();
             };
         };
 
-        //var TRpiggyBank = new PiggyBank(450, 40, 0.4);
+
 
         var titlePiggy = new PiggyBank(250, 150, 1);
 
@@ -512,7 +413,6 @@ var sketchProc = function(processingInstance) {
         };
 
 
-
         var play = function() {
             scene = 'play';
 
@@ -544,7 +444,6 @@ var sketchProc = function(processingInstance) {
             //     acheivements[i].notify();
             // }
         };
-
 
 
         draw = function() {
@@ -619,8 +518,6 @@ var sketchProc = function(processingInstance) {
             }
         };
         //That's all, folks!
-
-
 
 
 
