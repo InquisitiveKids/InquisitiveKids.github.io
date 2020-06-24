@@ -1,7 +1,6 @@
-
-var sketchProc = function (processingInstance) {
-    with (processingInstance) {
-        size(500, 500);
+var sketchProc = function(processingInstance) {
+    with(processingInstance) {
+        size(600, 600);
         frameRate(30);
         // KA Javascript code goes here!
 
@@ -88,7 +87,7 @@ var sketchProc = function (processingInstance) {
 
         var cmpn = ["k", "M", "B", "T", "q", "Q", "s", "S", "o", "n", "d", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah", "ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az", "ba", "bb", "bc", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bk", "bl", "bm", "bn", "bo", "bp", "bq", "br", "bs", "bt", "bu", "bv", "bw", "bx", "by", "bz", "ca", "cb", "cc", "cd", "ce", "cf", "cg", "ch", "ci", "cj", "ck", "cl", "cm", "cn", "co", "cp", "cq", "cr", "cs", "ct", "cu", "cv", "cw", "cx", "cy", "cz", "da", "db", "dc", "dd", "de", "df", "dg", "dh", "di", "dj", "dk", "dl", "dm", "dn", "do", "dp", "dq", "dr", "ds", "dt", "du", "dv", "dw", "dx", "dy", "dz"];
 
-        var cmp = function (num, f) {
+        var cmp = function(num, f) {
             if (num.toString().toLowerCase() === "infinity") {
                 return "Big Number";
             }
@@ -150,11 +149,9 @@ var sketchProc = function (processingInstance) {
                         return n1 + n2 + n3 + "." + n4 + n5 + s;
                     }
                 }
-            }
-            else if (num < 1000) {
+            } else if (num < 1000) {
                 return num.toFixed(f);
-            }
-            else {
+            } else {
                 var n = num.toString();
                 var fi = Number(num).toFixed(0).toString();
                 var len = (fi.length - 1) / 3;
@@ -165,7 +162,7 @@ var sketchProc = function (processingInstance) {
             }
         };
 
-        var drawPiggyBank = function (x, y, s) {
+        var drawPiggyBank = function(x, y, s) {
             stroke(0, 0, 0);
             strokeWeight(2 * s);
             fill(250, 195, 202);
@@ -258,7 +255,7 @@ var sketchProc = function (processingInstance) {
             arc(x, y - 40 * s, 100 * s, 50 * s, 255, 315);
         };
 
-        var PiggyBank = function (x, y, s) {
+        var PiggyBank = function(x, y, s) {
             this.x = x;
             this.y = y;
             this.S = s;
@@ -266,7 +263,7 @@ var sketchProc = function (processingInstance) {
             this.r = 0;
             this.shakeTimer = 9999;
 
-            this.draw = function () {
+            this.draw = function() {
                 pushMatrix();
                 translate(this.x, this.y);
                 rotate(this.r);
@@ -274,7 +271,7 @@ var sketchProc = function (processingInstance) {
                 popMatrix();
             };
 
-            this.shake = function () {
+            this.shake = function() {
                 if (this.shakeTimer < 30) {
                     this.r += sin(frameCount * 40) * 5;
                     this.s = this.S * 1.1;
@@ -285,7 +282,7 @@ var sketchProc = function (processingInstance) {
                 this.shakeTimer++;
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.draw();
                 this.shake();
             };
@@ -295,7 +292,7 @@ var sketchProc = function (processingInstance) {
 
         var titlePiggy = new PiggyBank(250, 150, 1);
 
-        var Button = function (x, y, w, h, r, c1, c2, Text, TextSize, tf, tc) {
+        var Button = function(x, y, w, h, r, c1, c2, Text, TextSize, tf, tc) {
             this.x = x;
             this.y = y;
             this.w = w;
@@ -310,7 +307,7 @@ var sketchProc = function (processingInstance) {
             this.over = false;
             this.depth = 10;
 
-            this.draw = function () {
+            this.draw = function() {
                 noStroke();
                 fill(this.c2);
                 for (var i = 0; i < this.depth; i++) {
@@ -324,7 +321,7 @@ var sketchProc = function (processingInstance) {
                 text(this.Text, this.x - this.depth + this.w / 2, this.y - this.depth + this.h / 2);
             };
 
-            this.update = function () {
+            this.update = function() {
                 if (mouseX > this.x - 10 && mouseX < this.x - 10 + this.w && mouseY > this.y - 10 + this.r && mouseY < this.y - 10 + (this.h - this.r) || mouseX > this.x - 10 + this.r && mouseX < this.x - 10 + (this.w - this.r) && mouseY > this.y - 10 && mouseY < this.y - 10 + this.h || dist(this.x - 10 + this.r, this.y - 10 + this.r, mouseX, mouseY) < this.r || dist(this.x - 10 + this.r, this.y - 10 + (this.h - this.r), mouseX, mouseY) < this.r || dist(this.x - 10 + (this.w - this.r), this.y - 10 + this.r, mouseX, mouseY) < this.r || dist(this.x - 10 + (this.w - this.r), this.y - 10 + (this.h - this.r), mouseX, mouseY) < this.r) {
                     this.over = true;
                     mouseOver = true;
@@ -344,7 +341,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.update();
                 this.draw();
             };
@@ -352,7 +349,7 @@ var sketchProc = function (processingInstance) {
 
         var startButton = new Button(160, 420, 200, 50, 20, color(0, 255, 0), color(0, 100, 0), "Play", 30, font, color(255, 255, 255));
 
-        var NameBlock = function (x, y, r) {
+        var NameBlock = function(x, y, r) {
             this.x = x;
             this.y = y;
             this.r = r;
@@ -366,7 +363,7 @@ var sketchProc = function (processingInstance) {
             this.maxChars = 10;
             this.charsLeft = this.maxChars - username.length;
 
-            this.draw = function () {
+            this.draw = function() {
                 fill(255, 255, 255);
                 strokeWeight(2);
                 if (this.selected) {
@@ -416,7 +413,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.update = function () {
+            this.update = function() {
                 if (mouseX > this.x && mouseX < this.x + this.w && mouseY > this.y + this.r && mouseY < this.y + (this.h - this.r) || mouseX > this.x + this.r && mouseX < this.x + (this.w - this.r) && mouseY > this.y && mouseY < this.y + this.h || dist(this.x + this.r, this.y + this.r, mouseX, mouseY) < this.r || dist(this.x + this.r, this.y + (this.h - this.r), mouseX, mouseY) < this.r || dist(this.x + (this.w - this.r), this.y + this.r, mouseX, mouseY) < this.r || dist(this.x + (this.w - this.r), this.y + (this.h - this.r), mouseX, mouseY) < this.r) {
                     this.over = true;
                     overText = true;
@@ -425,7 +422,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.draw();
                 this.update();
             };
@@ -433,12 +430,12 @@ var sketchProc = function (processingInstance) {
 
         var nameBlock = new NameBlock(100, 350, 20);
 
-        var BMoney = function (x, y, dir) {
+        var BMoney = function(x, y, dir) {
             this.x = x;
             this.y = y;
             this.dir = dir;
 
-            this.draw = function () {
+            this.draw = function() {
                 noFill();
                 stroke(166, 34, 199);
                 strokeWeight(5);
@@ -458,7 +455,7 @@ var sketchProc = function (processingInstance) {
                 popMatrix();
             };
 
-            this.move = function () {
+            this.move = function() {
                 if (this.dir === 'up') {
                     this.y -= 2;
                     if (this.y < -105) {
@@ -473,7 +470,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.draw();
                 this.move();
             };
@@ -492,7 +489,7 @@ var sketchProc = function (processingInstance) {
             }
         }
 
-        Background = function () {
+        Background = function() {
             background(149, 15, 194);
 
             for (var i = 0; i < backgroundMoney.length; i++) {
@@ -500,7 +497,7 @@ var sketchProc = function (processingInstance) {
             }
         };
 
-        var BottomButton = function (x, y, type) {
+        var BottomButton = function(x, y, type) {
             this.x = x;
             this.y = y;
             this.type = type;
@@ -508,7 +505,7 @@ var sketchProc = function (processingInstance) {
             this.on = false;
             this.notifs = 0;
 
-            this.update = function () {
+            this.update = function() {
                 if (mouseX > this.x && mouseX < this.x + 500 / 3 && mouseY > this.y && mouseY < 500 && !this.on) {
                     this.over = true;
                     mouseOver = true;
@@ -522,7 +519,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.draw = function () {
+            this.draw = function() {
                 noStroke();
                 rectMode(CORNER);
                 fill(129, 2, 161);
@@ -597,7 +594,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.update();
                 this.draw();
             };
@@ -607,13 +604,13 @@ var sketchProc = function (processingInstance) {
         var earnButton = new BottomButton(500 / 3, 390, 'e');
         var shopButton = new BottomButton(500 / 3 * 2, 390, 's');
 
-        var bottomBar = function () {
+        var bottomBar = function() {
             acheiveButton.pack();
             earnButton.pack();
             shopButton.pack();
         };
 
-        var Scroller = function (x, y, size) {
+        var Scroller = function(x, y, size) {
             this.x = x;
             this.startY = y;
             this.y = this.startY;
@@ -623,7 +620,7 @@ var sketchProc = function (processingInstance) {
             this.value = this.y - this.startY;
             this.selected = false;
 
-            this.draw = function () {
+            this.draw = function() {
                 stroke(0, 0, 0);
                 strokeWeight(5);
                 line(this.x, this.startY, this.x, this.end);
@@ -640,7 +637,7 @@ var sketchProc = function (processingInstance) {
                 rectMode(CORNER);
             };
 
-            this.update = function () {
+            this.update = function() {
                 this.value = this.y - this.startY;
                 if (mouseX > this.x - 10 && mouseX < this.x + 10 && mouseY > this.y - 25 && mouseY < this.y + 25) {
                     this.over = true;
@@ -664,7 +661,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.update();
                 this.draw();
             };
@@ -673,7 +670,7 @@ var sketchProc = function (processingInstance) {
         var aScroller = new Scroller(475, 110, 250);
         var sScroller = new Scroller(475, 110, 250);
 
-        var Package = function (amount) {
+        var Package = function(amount) {
             this.x = 400;
             this.y = 450;
             this.Amount = amount;
@@ -693,7 +690,7 @@ var sketchProc = function (processingInstance) {
             this.gone = false;
             this.done = false;
 
-            this.draw = function () {
+            this.draw = function() {
                 background(149, 15, 194);
                 noStroke();
                 fill(255, 255, 255, 50);
@@ -776,7 +773,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.jump = function () {
+            this.jump = function() {
                 if (!this.landed) {
                     this.x -= 2.7;
                     this.s += 0.05;
@@ -811,7 +808,7 @@ var sketchProc = function (processingInstance) {
                 this.yVel += this.gravity;
             };
 
-            this.deliver = function () {
+            this.deliver = function() {
                 this.draw();
                 this.jump();
             };
@@ -819,7 +816,7 @@ var sketchProc = function (processingInstance) {
 
         var packages = [];
 
-        var Acheivement = function (y, id) {
+        var Acheivement = function(y, id) {
             this.x = 20;
             this.id = id;
             this.offset = map(aScroller.value, 0, 250, -950, 0);
@@ -835,7 +832,7 @@ var sketchProc = function (processingInstance) {
             this.notified = false;
             this.unNotifed = false;
 
-            this.draw = function () {
+            this.draw = function() {
                 strokeWeight(1);
                 stroke(0);
                 if (!this.completed) {
@@ -871,7 +868,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.update = function () {
+            this.update = function() {
                 this.offset = map(aScroller.value, 0, 250, -950, 0);
                 this.y = this.startY - this.even - this.offset;
 
@@ -975,7 +972,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.notify = function () {
+            this.notify = function() {
                 switch (this.id) {
                     case 0:
                         if (money >= 1000) {
@@ -1048,7 +1045,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.update();
                 this.draw();
             };
@@ -1061,7 +1058,7 @@ var sketchProc = function (processingInstance) {
         }
 
         var sItemNum = 11;
-        var ShopItem = function (y, id) {
+        var ShopItem = function(y, id) {
             this.x = 20;
             this.id = id;
             this.offset = map(sScroller.value, 0, 250, -950, 0);
@@ -1124,7 +1121,7 @@ var sketchProc = function (processingInstance) {
                     break;
             }
 
-            this.draw = function () {
+            this.draw = function() {
                 strokeWeight(1);
                 stroke(0);
                 fill(255, 255, 255);
@@ -1151,7 +1148,7 @@ var sketchProc = function (processingInstance) {
                 text('$' + cmp(this.price), this.x + 370, this.y + 30);
             };
 
-            this.update = function () {
+            this.update = function() {
                 this.offset = map(sScroller.value, 0, 250, -this.totalLength + 110, 0);
                 this.y = this.startY - this.even - this.offset;
                 this.wrongT -= 5;
@@ -1230,7 +1227,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.update();
                 this.draw();
             };
@@ -1252,7 +1249,7 @@ var sketchProc = function (processingInstance) {
         var titleYVel = -20;
         var titleGravity = 0.3;
         var titleLanded = false;
-        var start = function () {
+        var start = function() {
             Background();
 
             pushMatrix();
@@ -1372,7 +1369,7 @@ var sketchProc = function (processingInstance) {
             }
         };
 
-        var Cash = function (x, y) {
+        var Cash = function(x, y) {
             this.startX = x;
             this.startY = y;
             this.x = this.startX;
@@ -1389,7 +1386,7 @@ var sketchProc = function (processingInstance) {
             this.speed = 0.5;
             this.size = 1;
 
-            this.draw = function () {
+            this.draw = function() {
                 noStroke();
                 fill(130, 250, 115);
                 rectMode(CENTER);
@@ -1409,7 +1406,7 @@ var sketchProc = function (processingInstance) {
                 text("$", this.x, this.y);
             };
 
-            this.update = function () {
+            this.update = function() {
                 if (!this.start) {
                     this.x = this.x + sin(this.rotate) * this.radius;
                     this.y = this.y + cos(this.rotate) * this.radius;
@@ -1431,7 +1428,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.draw();
                 this.update();
             };
@@ -1439,7 +1436,7 @@ var sketchProc = function (processingInstance) {
 
         var cash = [];
 
-        var BigBux = function (x, y, s) {
+        var BigBux = function(x, y, s) {
             this.x = x;
             this.y = y;
             this.S = s;
@@ -1447,7 +1444,7 @@ var sketchProc = function (processingInstance) {
             this.pressed = false;
             this.shrink = -0.05;
 
-            this.draw = function () {
+            this.draw = function() {
                 noStroke();
                 rectMode(CENTER);
                 stroke(3, 140, 16);
@@ -1466,7 +1463,7 @@ var sketchProc = function (processingInstance) {
                 text("$", this.x, this.y);
             };
 
-            this.update = function () {
+            this.update = function() {
                 if (mouseX > this.x - 150 && mouseX < this.x + 150 && mouseY > this.y - 75 && mouseY < this.y + 75) {
                     this.over = true;
                     mouseOver = true;
@@ -1491,7 +1488,7 @@ var sketchProc = function (processingInstance) {
                 }
             };
 
-            this.pack = function () {
+            this.pack = function() {
                 this.update();
                 this.draw();
             };
@@ -1500,7 +1497,7 @@ var sketchProc = function (processingInstance) {
         var bigBux = new BigBux(250, 200, 1);
 
         var earnTimer = 0;
-        var earnEasyMoney = function () {
+        var earnEasyMoney = function() {
             money += printerEarnings * moneyPrinters;
             money += farmEarnings * moneyFarms;
             money += factoryEarnings * moneyFactories;
@@ -1508,7 +1505,7 @@ var sketchProc = function (processingInstance) {
             money += diamondEarnings * diamondMines;
         };
 
-        var earnCPS = function () {
+        var earnCPS = function() {
             earnTimer++;
             if (earnTimer > 10) {
                 earnTimer = 0;
@@ -1516,7 +1513,7 @@ var sketchProc = function (processingInstance) {
             }
         };
 
-        var play = function () {
+        var play = function() {
             scene = 'play';
 
             cps = printerEarnings * moneyPrinters + farmEarnings * moneyFarms + factoryEarnings * moneyFactories + goldEarnings * goldMines + diamondEarnings * diamondMines;
@@ -1556,7 +1553,7 @@ var sketchProc = function (processingInstance) {
             }
         };
 
-        var acheive = function () {
+        var acheive = function() {
             scene = 'acheive';
 
             cps = printerEarnings * moneyPrinters + farmEarnings * moneyFarms + factoryEarnings * moneyFactories + goldEarnings * goldMines + diamondEarnings * diamondMines;
@@ -1602,7 +1599,7 @@ var sketchProc = function (processingInstance) {
             }
         };
 
-        var shop = function () {
+        var shop = function() {
             scene = 'shop';
 
             cps = printerEarnings * moneyPrinters + farmEarnings * moneyFarms + factoryEarnings * moneyFactories + goldEarnings * goldMines + diamondEarnings * diamondMines;
@@ -1649,7 +1646,7 @@ var sketchProc = function (processingInstance) {
             bottomBar();
         };
 
-        draw = function () {
+        draw = function() {
             switch (scene) {
                 case 'play':
                     play();
@@ -1686,7 +1683,7 @@ var sketchProc = function (processingInstance) {
             mouseGrabbing = false;
         };
 
-        mouseClicked = function () {
+        mouseClicked = function() {
             if (nameBlock.over) {
                 nameBlock.selected = true;
                 nameBlock.wrong = false;
@@ -1856,7 +1853,7 @@ var sketchProc = function (processingInstance) {
             }
         };
 
-        mousePressed = function () {
+        mousePressed = function() {
             if (aScroller.over) {
                 aScroller.selected = true;
             }
@@ -1865,12 +1862,12 @@ var sketchProc = function (processingInstance) {
             }
         };
 
-        mouseReleased = function () {
+        mouseReleased = function() {
             aScroller.selected = false;
             sScroller.selected = false;
         };
 
-        keyPressed = function () {
+        keyPressed = function() {
             if (nameBlock.over) {
                 if (keyCode === ENTER) {
                     nameBlock.over = false;
