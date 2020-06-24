@@ -240,7 +240,7 @@ var sketchProc = function(processingInstance) {
                 } else if (this.dir === 'down') {
                     rotate(90);
                 }
-                text("$", 0, 0);
+                text("😎",20,20);
                 popMatrix();
             };
 
@@ -279,7 +279,7 @@ var sketchProc = function(processingInstance) {
         }
 
         Background = function() {
-            background(149, 15, 194);
+            background(0, 0, 0);
 
             for (var i = 0; i < backgroundMoney.length; i++) {
                 backgroundMoney[i].pack();
