@@ -229,8 +229,9 @@ var sketchProc = function(processingInstance) {
                 stroke(166, 34, 199);
                 strokeWeight(5);
                 rectMode(CORNER);
-                rect(this.x, this.y, 50, 100);
-                fill(166, 34, 199);
+                /*fill(0, 0, 255);
+                rect(this.x, this.y, 50, 100);*/
+                fill(0, 0, 255);
                 textFont(font, 45);
                 textAlign(CENTER, CENTER);
                 pushMatrix();
@@ -240,7 +241,7 @@ var sketchProc = function(processingInstance) {
                 } else if (this.dir === 'down') {
                     rotate(90);
                 }
-                text("😎", 20, 20);
+                text("😎", 5, 0);
                 popMatrix();
             };
 
@@ -313,7 +314,7 @@ var sketchProc = function(processingInstance) {
 
 
             pushMatrix();
-            translate(80, 250);
+            translate(80, 120);
             //rotate(10);
             fill(255, 255, 255);
             textFont(font, 50);
@@ -323,105 +324,19 @@ var sketchProc = function(processingInstance) {
             text("Typing Game", 0, 0);
             popMatrix();
 
-            // pushMatrix();
-            // translate(107, 51);
-            // rotate(-40);
-            // fill(0, 0, 0);
-            // textFont(font, 50);
-            // text("P", 3, 3);
-            // textFont(font, 50);
-            // fill(247, 0, 132);
-            // text("P", 0, 0);
-            // popMatrix();
+            
+            pushMatrix();
+            translate(80, 250);
+            //rotate(10);
+            fill(255, 255, 255);
+            textFont(font, 50);
+            text("Flash Card", 3, 3);
+            textFont(font, 50);
+            fill(16, 27, 230);
+            text("Flash Card", 0, 0);
+            popMatrix();
 
-            // pushMatrix();
-            // translate(143, 25);
-            // rotate(-30);
-            // fill(0, 0, 0);
-            // textFont(font, 50);
-            // text("I", 3, 3);
-            // textFont(font, 50);
-            // fill(247, 0, 132);
-            // text("I", 0, 0);
-            // popMatrix();
-
-            // pushMatrix();
-            // translate(172, 8);
-            // rotate(-15);
-            // fill(0, 0, 0);
-            // textFont(font, 50);
-            // text("G", 3, 3);
-            // textFont(font, 50);
-            // fill(247, 0, 132);
-            // text("G", 0, 0);
-            // popMatrix();
-
-            // pushMatrix();
-            // translate(224, -4);
-            // rotate(-5);
-            // fill(0, 0, 0);
-            // textFont(font, 50);
-            // text("G", 3, 3);
-            // textFont(font, 50);
-            // fill(247, 0, 132);
-            // text("G", 0, 0);
-            // popMatrix();
-
-            // pushMatrix();
-            // translate(275, -6);
-            // rotate(10);
-            // fill(0, 0, 0);
-            // textFont(font, 50);
-            // text("Y", 3, 3);
-            // textFont(font, 50);
-            // fill(247, 0, 132);
-            // text("Y", 0, 0);
-            // popMatrix();
-
-            // pushMatrix();
-            // translate(210, 250);
-            // rotate(10);
-            // fill(0, 0, 0);
-            // textFont(font, 50);
-            // text("B", 3, 3);
-            // textFont(font, 50);
-            // fill(79, 240, 98);
-            // text("B", 0, 0);
-            // popMatrix();
-
-            // pushMatrix();
-            // translate(250, 255);
-            // rotate(-5);
-            // fill(0, 0, 0);
-            // textFont(font, 50);
-            // text("A", 3, 3);
-            // textFont(font, 50);
-            // fill(79, 240, 98);
-            // text("A", 0, 0);
-            // popMatrix();
-
-            // pushMatrix();
-            // translate(290, 250);
-            // rotate(-15);
-            // fill(0, 0, 0);
-            // textFont(font, 50);
-            // text("N", 3, 3);
-            // textFont(font, 50);
-            // fill(79, 240, 98);
-            // text("N", 0, 0);
-            // popMatrix();
-
-            // pushMatrix();
-            // translate(330, 240);
-            // rotate(-30);
-            // fill(0, 0, 0);
-            // textFont(font, 50);
-            // text("K", 3, 3);
-            // textFont(font, 50);
-            // fill(79, 240, 98);
-            // text("K", 0, 0);
-            // popMatrix();
-            // popMatrix();
+           
 
             if (titleY > 0 && titleYVel > 0) {
                 if (titleYVel > 0 && titleYVel < 5) {
@@ -452,10 +367,10 @@ var sketchProc = function(processingInstance) {
             //earnCPS();
 
             Background();
-            fill(129, 2, 161);
+            fill(0, 255, 0);
             noStroke();
             rect(0, 0, 500, 100);
-            fill(199, 46, 255);
+            fill(0, 0, 255);
             rect(0, 0, 500, 90);
 
             textAlign(CENTER, CENTER);
@@ -484,9 +399,9 @@ var sketchProc = function(processingInstance) {
                     play();
                     break;
 
-                case "start":
-                    start();
-                    break;
+                    case "start":
+                        start();
+                        break;
             }
 
             if (overText) {
@@ -537,6 +452,7 @@ var sketchProc = function(processingInstance) {
 
 
         keyPressed = function() {
+            //we need to add code to handle backspace key pressed. -- Kangkang
             if (nameBlock.over) {
                 if (keyCode === ENTER) {
                     nameBlock.over = false;
