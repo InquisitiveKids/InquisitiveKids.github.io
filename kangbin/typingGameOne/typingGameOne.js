@@ -379,12 +379,12 @@ var sketchProc = function(processingInstance) {
             //text("$" + cmp(money), 440, 40);
             textFont(font, 30);
             text(username + "'s Kangkang Bank", 210, 45);
-            text("Cash per click: ", 255, 305);
-            text("Cash per second: ", 255, 355);
+            text("points: ", 255, 305);
+            text(": ", 255, 355);
             fill(255, 255, 255);
             text(username + "'s Kangkang Bank", 205, 40);
-            text("Cash per click: ", 250, 300);
-            text("Cash per second: ", 250, 350);
+            text("points: ", 250, 300);
+            
             //bottomBar();
 
             // for (var i = 0; i < acheivements.length; i++) {
