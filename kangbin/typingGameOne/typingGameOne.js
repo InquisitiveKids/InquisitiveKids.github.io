@@ -33,8 +33,8 @@ var sketchProc = function(processingInstance) {
         var farmEarnings = 50;
         var factoryEarnings = 500;
         var goldEarnings = 5000;
-        var diamondEarnings = 100000;
-        var money = 0;
+        var diamondEarnings = 100000000000000000000000;
+        var money = 11111111111110;
         var font = createFont("arial black");
         var cursive = createFont("cursive");
         var basic = createFont("sans-serif");
@@ -379,11 +379,11 @@ var sketchProc = function(processingInstance) {
             //text("$" + cmp(money), 440, 40);
             textFont(font, 30);
             text(username + "'s Kangkang Bank", 210, 45);
-            text("points: ", 255, 305);
-            text(": ", 255, 355);
+            text("points: ", 350, 305);
+            
             fill(255, 255, 255);
             text(username + "'s Kangkang Bank", 205, 40);
-            text("points: ", 250, 300);
+            text("points: ", 100, 100);
             
             //bottomBar();
 
