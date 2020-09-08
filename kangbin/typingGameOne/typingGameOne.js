@@ -306,10 +306,10 @@ var sketchProc = function(processingInstance) {
             //rotate(10);
             fill(255, 255, 255);
             textFont(font, 50);
-            text("Inquisitive Kids", 3, 3);
+            text("Inquisitive Kid's", 3, 3);
             textFont(font, 50);
             fill(79, 240, 98);
-            text("Inquisitive Kids", 0, 0);
+            text("Inquisitive Kid's", 0, 0);
             popMatrix();
 
 
