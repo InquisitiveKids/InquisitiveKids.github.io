@@ -18,13 +18,16 @@ jQuery(function($) {
         var winTop = $(window).scrollTop();
         var rangeTop = 200;
         var rangeBottom = 500;
-        $('.navbar-collapse').find('.scroll a').each(function() {
+        $('.navbar-collapse').find('.scroll a.nav-link').each(function() {
+        //$('#navbarSupportedContent ').find('ul > li.scroll.nav-item > a').each(function() {            
+            
             contentTop.push($($(this).attr('href')).offset().top);
             contentBottom.push($($(this).attr('href')).offset().top + $($(this).attr('href')).height());
         })
         $.each(contentTop, function(i) {
             if (winTop > contentTop[i] - rangeTop) {
-                $('.navbar-collapse li.scroll')
+                //$('.navbar-collapse .scroll .nav-link')     
+                $('.navbar-collapse li.scroll')           
                     .removeClass('active')
                     .eq(i).addClass('active');
             }
@@ -106,15 +109,29 @@ jQuery(function($) {
     });
 
 
-    $("a[rel^='prettyPhoto']").prettyPhoto({
-        social_tools: false,
-        overlay_gallery: false,
-        show_title: false,
-        hideflash: true,
-        social_tools: "",
-        iframe_markup: "<iframe src='{path}' width='{width}' height='{height}' frameborder='no' allowfullscreen='true'></iframe>",
-        deeplinking: false
-    });
 
 
 });
+
+function sendEmail(){
+    var email = document.getElementById('to'),
+        to = 'threeInquisitive' + 'kids'+'@'+'gmail.com',
+        subject = encodeURIComponent(document.getElementById('subject').value),
+        body = encodeURIComponent(document.getElementById('msgBody').value),
+        message = ''
+    if (to){
+      //email.className = 'not'
+      message = 'mailto:'+to
+      subject||body?message+='?':false
+      subject?message+='subject='+subject:false
+      subject&&body?message+='&body='+body:false
+      !subject&&body?message+='body='+body:false;      
+      window.location.href = message;
+      //window.open(message);
+    } else {
+      email.className='error'
+      notification('Please enter a recipient email address','error',5)
+      email.focus()
+    }
+
+  };

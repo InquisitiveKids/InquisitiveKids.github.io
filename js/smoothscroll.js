@@ -5,6 +5,10 @@
 // - Patrick Brunner (patrickb1991@gmail.com)
 // - Michael Herf: ssc_pulse Algorithm
 
+// walk around error [Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive.
+//document.addEventListener("mousewheel", this.mousewheel.bind(this), { passive: false });
+window.addEventListener('wheel', { passive: false })
+
 function ssc_init() {
   if (!document.body) return;
   var e = document.body;
