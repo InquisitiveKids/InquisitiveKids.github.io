@@ -113,6 +113,17 @@ jQuery(function($) {
 
 });
 
+$("a[rel^='prettyPhoto']").prettyPhoto({
+    social_tools: false,
+    overlay_gallery: false,
+    show_title: false,
+    hideflash: true,
+    social_tools: "",
+    iframe_markup: "<iframe src='{path}' width='{width}' height='{height}' frameborder='no' allowfullscreen='true'></iframe>",
+    deeplinking: false
+}); 
+
+
 function sendEmail(){
     var email = document.getElementById('to'),
         to = 'threeInquisitive' + 'kids'+'@'+'gmail.com',
