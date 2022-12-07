@@ -112,7 +112,6 @@
                     <p class="text-center wow fadeInDown">We Make it Happen Together!</p>
                 </div>
 
-
                 <div class="row text-center">
 
                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -217,7 +216,16 @@
     <!--/#footer-->
     
     <script src="js/jquery.js"></script>
-    <script src="js/including.js"></script>
+
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("nav.html");
+            $("#portfolio_list").load("portfolio.html");
+            $("#resources_list").load("resources.html");
+            $("#footer-placeholder").load("footer.html");        
+          });
+    </script>
+    <!-- <script src="js/including.js"></script>  -->
     <script src="js/mousescroll.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
