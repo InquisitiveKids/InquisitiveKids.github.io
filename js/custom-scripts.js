@@ -106,6 +106,17 @@ jQuery(function($) {
                 $this.unbind('inview');
             }
         });
+
+        $("a[rel^='prettyPhoto']").prettyPhoto({
+            social_tools: false,
+            overlay_gallery: false,
+            show_title: false,
+            hideflash: true,
+            social_tools: "",
+            iframe_markup: "<iframe src='{path}' width='{width}' height='{height}' frameborder='no' allowfullscreen='true'></iframe>",
+            deeplinking: false
+        }); 
+        
     });
 
 
@@ -113,15 +124,7 @@ jQuery(function($) {
 
 });
 
-$("a[rel^='prettyPhoto']").prettyPhoto({
-    social_tools: false,
-    overlay_gallery: false,
-    show_title: false,
-    hideflash: true,
-    social_tools: "",
-    iframe_markup: "<iframe src='{path}' width='{width}' height='{height}' frameborder='no' allowfullscreen='true'></iframe>",
-    deeplinking: false
-}); 
+
 
 
 function sendEmail(){
