@@ -1,0 +1,10 @@
+# AI coding assistant docs/config — internal working notes, not for public view.
+# These still work locally for Claude Code; they're just never committed.
+CLAUDE.md
+**/CLAUDE.md
+.claude-docs/
+.claude/
+.cursorrules
+.windsurfrules
+AGENTS.md
+.aider*
