@@ -47,6 +47,20 @@ hr {
 
 .section-header {
     margin-bottom: 50px;
+    position: sticky;
+    top: 76px;
+    z-index: 10;
+    background: var(--surface);
+    padding: 20px 0 10px;
+}
+
+#our-team .section-header,
+#contact-us .section-header {
+    background: var(--surface-alt);
+}
+
+#portfolio .section-header {
+    background: #17181c;
 }
 
 .section-header .section-title {
@@ -219,7 +233,7 @@ ul.nostyle i {
     height: 360px;
     display: flex;
     align-items: center;
-    background: url('../images/banner/bg1.png');
+    background: url('../images/galaxyBanner.png');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -317,6 +331,7 @@ ul.nostyle i {
     color: #8fe3a4;
     position: relative;
     border: 1px solid #8fe3a4;
+    text-decoration: none;
 }
 
 #portfolio .portfolio-filter>li a:hover,
@@ -348,17 +363,6 @@ ul.nostyle i {
     box-shadow: var(--card-shadow);
 }
 
-#portfolio .portfolio-item.featured .portfolio-item-inner {
-    box-shadow: 0 0 0 3px var(--orange), var(--card-shadow-hover);
-}
-
-#portfolio .portfolio-item .featured-flag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 2;
-}
-
 #portfolio .portfolio-item .portfolio-item-inner img {
     width: 100%;
     height: 200px;
@@ -380,6 +384,14 @@ ul.nostyle i {
     color: #fff;
     height: 100%;
     overflow: auto;
+    display: block;
+    text-decoration: none;
+}
+
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info:hover,
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info:visited {
+    color: #fff;
+    text-decoration: none;
 }
 
 #portfolio .portfolio-item .portfolio-item-inner .portfolio-info h3 {
@@ -552,12 +564,21 @@ ul.nostyle i {
 }
 
 #our-team .team-member {
+    display: block;
     padding: 24px 18px;
     height: 100%;
     background: var(--surface);
     border-radius: var(--card-radius);
     box-shadow: var(--card-shadow);
     transition: box-shadow 300ms, transform 300ms;
+    color: inherit;
+    text-decoration: none;
+}
+
+#our-team .team-member:hover,
+#our-team .team-member:visited {
+    color: inherit;
+    text-decoration: none;
 }
 
 #our-team .team-member:hover {
@@ -739,6 +760,9 @@ ul.nostyle i {
 @media only screen and (max-width: 480px) {
     body {
         padding-top: 62px;
+    }
+    .section-header {
+        top: 62px;
     }
     .hero-title {
         font-size: 30px;

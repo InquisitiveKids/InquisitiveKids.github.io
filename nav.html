@@ -40,7 +40,7 @@
               <div>
                 <em class="fas fa-house fa-lg mb-1"></em>
               </div>
-              <span data-i18n="nav.home">Home</span>
+              <span data-languageVersions="nav.home">Home</span>
             </a>
           </li>
           <li class="scroll nav-item text-center mx-2 mx-lg-1">
@@ -48,7 +48,7 @@
               <div>
                 <i class="fas fa-circle-info fa-lg mb-1"></i>
               </div>
-              <span data-i18n="nav.about">About</span>
+              <span data-languageVersions="nav.about">About</span>
             </a>
           </li>
           <li class="scroll nav-item text-center mx-2 mx-lg-1">
@@ -56,16 +56,15 @@
               <div>
                 <i class="fas fa-rocket fa-lg mb-1"></i>
               </div>
-              <span data-i18n="nav.projects">Projects</span>
+              <span data-languageVersions="nav.projects">Projects</span>
             </a>
           </li>
           <li class="scroll nav-item text-center mx-2 mx-lg-1">
             <a class="nav-link" href="#our-team">
               <div>
                 <i class="fas fa-users fa-lg mb-1"></i>
-                <span class="badge rounded-pill badge-notification bg-warning">3</span>
               </div>
-              <span data-i18n="nav.team">Team</span>
+              <span data-languageVersions="nav.team">Team</span>
             </a>
           </li>
           <li class="scroll nav-item dropdown text-center mx-2 mx-lg-1">
@@ -74,20 +73,20 @@
               <div>
                 <i class="fas fa-book-open fa-lg mb-1"></i>
               </div>
-              <span data-i18n="nav.resources">Resource</span>
+              <span data-languageVersions="nav.resources">Resource</span>
             </a>
             <!-- Dropdown menu -->
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#worksheets"><i class="fas fa-file-lines me-2"></i><span data-i18n="nav.resources.worksheets">Math Worksheets</span></a></li>
-              <li><a class="dropdown-item" href="#competition"><i class="fas fa-trophy me-2"></i><span data-i18n="nav.resources.competition">Math Competition collection</span></a></li>
+              <li><a class="dropdown-item" href="#worksheets"><i class="fas fa-file-lines me-2"></i><span data-languageVersions="nav.resources.worksheets">Math Worksheets</span></a></li>
+              <li><a class="dropdown-item" href="#competition"><i class="fas fa-trophy me-2"></i><span data-languageVersions="nav.resources.competition">Math Competition collection</span></a></li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item" href="#freeLessons"><i class="fas fa-circle-play me-2"></i><span data-i18n="nav.resources.lessons">Free online lessons</span></a>
+                <a class="dropdown-item" href="#freeLessons"><i class="fas fa-circle-play me-2"></i><span data-languageVersions="nav.resources.lessons">Free online lessons</span></a>
               </li>
               <li>
-                <a class="dropdown-item" href="#workbooks"><i class="fas fa-book me-2"></i><span data-i18n="nav.resources.workbooks">Workbooks</span></a>
+                <a class="dropdown-item" href="#workbooks"><i class="fas fa-book me-2"></i><span data-languageVersions="nav.resources.workbooks">Workbooks</span></a>
               </li>
             </ul>
           </li>
@@ -95,9 +94,8 @@
             <a class="nav-link" href="#contact-us">
               <div>
                 <i class="fas fa-paper-plane fa-lg mb-1"></i>
-                <span class="badge rounded-pill badge-notification bg-warning">11</span>
               </div>
-              <span data-i18n="nav.contact">Contact</span>
+              <span data-languageVersions="nav.contact">Contact</span>
             </a>
           </li>
         </ul>
@@ -120,13 +118,13 @@
         item.addEventListener('click', function (e) {
           e.preventDefault();
           var lang = this.getAttribute('data-lang');
-          I18n.setLanguage(lang).then(function () {
+          LanguageVersions.setLanguage(lang).then(function () {
             var label = document.getElementById('lang-current');
             if (label) label.textContent = lang.toUpperCase();
           });
         });
       });
       var current = document.getElementById('lang-current');
-      if (current && window.I18n) current.textContent = I18n.getCurrentLanguage().toUpperCase();
+      if (current && window.LanguageVersions) current.textContent = LanguageVersions.getCurrentLanguage().toUpperCase();
     })();
   </script>

@@ -79,13 +79,25 @@ jQuery(function($) {
             });
         };
 
-        $('.business-stats').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
-            var $this = $(this);
-            if (visible) {
+        if ('IntersectionObserver' in window) {
+            var statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var $this = $(entry.target);
+                        $this.animateNumbers($this.data('digit'), false, $this.data('duration'));
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            });
+            $('.business-stats').each(function() {
+                statsObserver.observe(this);
+            });
+        } else {
+            $('.business-stats').each(function() {
+                var $this = $(this);
                 $this.animateNumbers($this.data('digit'), false, $this.data('duration'));
-                $this.unbind('inview');
-            }
-        });
+            });
+        }
 
     });
 
