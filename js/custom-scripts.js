@@ -47,26 +47,6 @@ jQuery(function($) {
     smoothScroll.init();
 
 
-    $(window).load(function() {
-        'use strict';
-        var $portfolio_selectors = $('.portfolio-filter >li>a');
-        var $portfolio = $('.portfolio-items');
-        $portfolio.isotope({
-            itemSelector: '.portfolio-item',
-            layoutMode: 'fitRows'
-        });
-
-        $portfolio_selectors.on('click', function() {
-            $portfolio_selectors.removeClass('active');
-            $(this).addClass('active');
-            var selector = $(this).attr('data-filter');
-            $portfolio.isotope({
-                filter: selector
-            });
-            return false;
-        });
-    });
-
     $(document).ready(function() {
 
         $.fn.animateNumbers = function(stop, commas, duration, ease) {
@@ -107,16 +87,6 @@ jQuery(function($) {
             }
         });
 
-        $("a[rel^='prettyPhoto']").prettyPhoto({
-            social_tools: false,
-            overlay_gallery: false,
-            show_title: false,
-            hideflash: true,
-            social_tools: "",
-            iframe_markup: "<iframe src='{path}' width='{width}' height='{height}' frameborder='no' allowfullscreen='true'></iframe>",
-            deeplinking: false
-        }); 
-        
     });
 
 
@@ -126,6 +96,28 @@ jQuery(function($) {
 
 
 
+
+function initPortfolio() {
+    'use strict';
+    var $portfolio_selectors = jQuery('.portfolio-filter >li>a');
+    var $portfolio = jQuery('.portfolio-items');
+    if (!$portfolio.length) return;
+
+    $portfolio.isotope({
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+    });
+
+    $portfolio_selectors.on('click', function() {
+        $portfolio_selectors.removeClass('active');
+        jQuery(this).addClass('active');
+        var selector = jQuery(this).attr('data-filter');
+        $portfolio.isotope({
+            filter: selector
+        });
+        return false;
+    });
+}
 
 function sendEmail(){
     var email = document.getElementById('to'),

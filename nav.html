@@ -1,48 +1,62 @@
- 
- <!-- https://mdbootstrap.com/docs/standard/navigation/navbar/examples-and-customization/  -->
+
  <!-- Navbar -->
 
-<nav id="main-nav" class="navbar navbar-default navbar-expand-lg navbar-dark bg-dark fixed-top" >
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a class="navbar-brand" href="index.html"><img src="images/logo 01.png" alt="logo" width="200"></a>
-      
-    
-  
-      <!-- Toggle button -->
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" 
-        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <em class="fas fa-bars text-light"></em>
-      </button>
-  
+      <a class="navbar-brand" href="index.html"><img src="images/logo 01.png" alt="Three Inquisitive Kids logo" width="180"></a>
+
+      <!-- Language switcher + mobile toggle, always visible top-right -->
+      <div class="d-flex align-items-center order-lg-3">
+        <div class="dropdown lang-switcher" id="lang-switcher">
+          <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" id="langDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false" aria-label="Choose language">
+            <i class="fas fa-globe me-1"></i><span id="lang-current">EN</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="langDropdown">
+            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="zh">中文</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="ja">日本語</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+          </ul>
+        </div>
+
+        <!-- Toggle button -->
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <em class="fas fa-bars text-light"></em>
+        </button>
+      </div>
+
       <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse navbar-right" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent">
         <!-- right links -->
         <ul class="navbar-nav nav ms-auto d-flex flex-row mt-3 mt-lg-0">
           <li class="scroll active nav-item text-center mx-2 mx-lg-1">
             <a class="nav-link" aria-current="page" href="#home">
               <div>
-                <em class="fas fa-home fa-lg mb-1"></em>
+                <em class="fas fa-house fa-lg mb-1"></em>
               </div>
-              Home
+              <span data-i18n="nav.home">Home</span>
             </a>
           </li>
           <li class="scroll nav-item text-center mx-2 mx-lg-1">
             <a class="nav-link" href="#about">
               <div>
-                <i class="fas fa-handshake"></i>
+                <i class="fas fa-circle-info fa-lg mb-1"></i>
               </div>
-              About
+              <span data-i18n="nav.about">About</span>
             </a>
           </li>
           <li class="scroll nav-item text-center mx-2 mx-lg-1">
             <a class="nav-link" href="#portfolio">
               <div>
-                <i class="fas fa-project-diagram fa-lg mb-1"></i>                
+                <i class="fas fa-rocket fa-lg mb-1"></i>
               </div>
-              Projects
+              <span data-i18n="nav.projects">Projects</span>
             </a>
           </li>
           <li class="scroll nav-item text-center mx-2 mx-lg-1">
@@ -51,45 +65,45 @@
                 <i class="fas fa-users fa-lg mb-1"></i>
                 <span class="badge rounded-pill badge-notification bg-warning">3</span>
               </div>
-              Team
+              <span data-i18n="nav.team">Team</span>
             </a>
-          </li>          
+          </li>
           <li class="scroll nav-item dropdown text-center mx-2 mx-lg-1">
-            <a class="nav-link dropdown-toggle" href="#resources" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="#resources" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               <div>
-                <i class="fas fa-database fa-lg mb-1"></i>
+                <i class="fas fa-book-open fa-lg mb-1"></i>
               </div>
-              Resource
+              <span data-i18n="nav.resources">Resource</span>
             </a>
             <!-- Dropdown menu -->
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#worksheets">Math Worksheets</a></li>
-              <li><a class="dropdown-item" href="#competition">Math Competition collection</a></li>
+              <li><a class="dropdown-item" href="#worksheets"><i class="fas fa-file-lines me-2"></i><span data-i18n="nav.resources.worksheets">Math Worksheets</span></a></li>
+              <li><a class="dropdown-item" href="#competition"><i class="fas fa-trophy me-2"></i><span data-i18n="nav.resources.competition">Math Competition collection</span></a></li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item" href="#freeLessons">Free online lessons</a>
+                <a class="dropdown-item" href="#freeLessons"><i class="fas fa-circle-play me-2"></i><span data-i18n="nav.resources.lessons">Free online lessons</span></a>
               </li>
               <li>
-                <a class="dropdown-item" href="#workbooks">Workbooks</a>
+                <a class="dropdown-item" href="#workbooks"><i class="fas fa-book me-2"></i><span data-i18n="nav.resources.workbooks">Workbooks</span></a>
               </li>
             </ul>
           </li>
           <li class="scroll nav-item text-center mx-2 mx-lg-1">
             <a class="nav-link" href="#contact-us">
               <div>
-                <i class="far fa-envelope fa-lg mb-1"></i>
+                <i class="fas fa-paper-plane fa-lg mb-1"></i>
                 <span class="badge rounded-pill badge-notification bg-warning">11</span>
               </div>
-              Contact
+              <span data-i18n="nav.contact">Contact</span>
             </a>
           </li>
         </ul>
         <!-- right links -->
-  
-       
+
+
       </div>
       <!-- Collapsible wrapper -->
     </div>
@@ -97,3 +111,22 @@
   </nav>
 
   <!-- Navbar -->
+
+  <script>
+    (function () {
+      var switcher = document.getElementById('lang-switcher');
+      if (!switcher) return;
+      switcher.querySelectorAll('[data-lang]').forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.preventDefault();
+          var lang = this.getAttribute('data-lang');
+          I18n.setLanguage(lang).then(function () {
+            var label = document.getElementById('lang-current');
+            if (label) label.textContent = lang.toUpperCase();
+          });
+        });
+      });
+      var current = document.getElementById('lang-current');
+      if (current && window.I18n) current.textContent = I18n.getCurrentLanguage().toUpperCase();
+    })();
+  </script>

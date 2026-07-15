@@ -12,22 +12,21 @@
     <title>Three Inquisitive Kids</title>
 
     <!-- core CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/animate.min.css" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet" />
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/prettyPhoto.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/glightbox.min.css" />
+    <link href="css/variables.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
-    <!-- MDB -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/ico/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/ico/favicon-16x16.png?v=2">
+    <link rel="shortcut icon" href="images/ico/favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="images/ico/apple-touch-icon.png?v=2">
 </head>
 
 <body id="home">
@@ -44,15 +43,10 @@
             <div class="banner-inner">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-6">
-
-                            <h2 style="background-color: black; width:80%; border-radius:5px; padding-left:10px;">Three
-                                Inquisitive Kids:<br>Find passion in learing!</h2>
-                            <p
-                                style="font-weight:bolder; font-size:x-large; font-family:'BIZ UDPMincho Medium', sans-serif;">
-                                <br>A place for all to learn and grow.
-                            </p>
-                            <a class="btn btn-primary btn-lg" href="#about">More about us!</a>
+                        <div class="col-lg-7">
+                            <h2 class="hero-title" data-i18n="hero.title">Three Inquisitive Kids: Find passion in learning!</h2>
+                            <p class="hero-subtitle" data-i18n="hero.subtitle">A place for all to learn and grow.</p>
+                            <a class="btn btn-primary btn-lg hero-cta" href="#about" data-i18n="hero.cta">More about us!</a>
 
                         </div>
                     </div>
@@ -65,19 +59,18 @@
             <div class="container">
 
                 <div class="section-header">
-                    <h2 class="section-title text-center wow fadeInDown">About Us</h2>
-                    <p class="text-center wow fadeInDown"><span style="font-size:x-large; font-weight:bolder;">Learn
-                            more
-                            about us!</span></p>
+                    <h2 class="section-title text-center wow fadeInDown" data-i18n="about.heading">About Us</h2>
+                    <p class="text-center wow fadeInDown lead-text" data-i18n="about.subheading">Learn
+                            more about us!</p>
                 </div>
 
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-sm-6 wow fadeInLeft">
-                        <img class="img-responsive" src="images/about.png" alt="">
+                        <img class="img-fluid rounded-card" src="images/about.png" alt="The Three Inquisitive Kids learning together">
                     </div>
 
                     <div class="col-sm-6 wow fadeInRight">
-                        <h3 class="column-title">Our Group</h3>
+                        <h3 class="column-title" data-i18n="about.groupTitle">Our Group</h3>
                         <p><i><b>The Three Inquisitive Kids</b></i> is made up of three siblings: Kangbin, Karen, and
                             Kalie.
                         </p>
@@ -89,13 +82,33 @@
 
 
 
-                        <a class="btn btn-primary" href="#">Learn More</a>
+                        <a class="btn btn-primary" href="#our-team" data-i18n="about.cta">Learn More</a>
 
                     </div>
                 </div>
             </div>
         </section>
         <!--/#about-->
+
+        <section id="stats-strip">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label" data-i18n="stats.siblings">Siblings</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label" data-i18n="stats.videos">Tutorial Videos</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label" data-i18n="stats.worksheets">Free Worksheets</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/#stats-strip-->
 
         <section id="portfolio">
             <div id="portfolio_list" class="container">
@@ -108,8 +121,8 @@
         <section id="our-team">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title text-center wow fadeInDown">We Three Together</h2>
-                    <p class="text-center wow fadeInDown">We Make it Happen Together!</p>
+                    <h2 class="section-title text-center wow fadeInDown" data-i18n="team.heading">We Three Together</h2>
+                    <p class="text-center wow fadeInDown lead-text" data-i18n="team.subheading">We Make it Happen Together!</p>
                 </div>
 
                 <div class="row text-center">
@@ -118,11 +131,11 @@
                         <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
                             <div class="team-img">
                                 <img class="img-fluid" src="images/team/kangbincatcharacter02.png"
-                                    alt="kangbin cat character">
+                                    alt="Kangbin cat character">
                             </div>
                             <div class="team-info">
                                 <h3>Kangbin Jia</h3>
-                                <span style="font-family:'century gothic';">Team Member</span>
+                                <span class="team-tagline">Loves tackling tricky word problems and building things with code.</span>
                             </div>
 
                         </div>
@@ -131,11 +144,11 @@
                         <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
                             <div class="team-img">
                                 <img class="img-fluid" src="images/team/karencatcharacter03.png"
-                                    alt="karen cat character">
+                                    alt="Karen cat character">
                             </div>
                             <div class="team-info">
                                 <h3>Karen Jia</h3>
-                                <span style="font-family:'century gothic';">Team Member</span>
+                                <span class="team-tagline">Enjoys explaining linear functions and that "aha" moment when it clicks.</span>
                             </div>
 
                         </div>
@@ -144,11 +157,11 @@
                         <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
                             <div class="team-img">
                                 <img class="img-fluid" src="images/team/kaliecatcharacter02.png"
-                                    alt="kaile cat form picture">
+                                    alt="Kalie cat character">
                             </div>
                             <div class="team-info">
                                 <h3>Kalie Jia</h3>
-                                <span style="font-family:'century gothic';">Team Member</span>
+                                <span class="team-tagline">Fan of number puzzles like cryptarithms — the trickier, the better.</span>
                             </div>
 
                         </div>
@@ -161,7 +174,7 @@
 
         <section id="resources">
             <div id="resources_list" class="container">
-                
+
             </div>
         </section>
 
@@ -172,7 +185,7 @@
 
             <div class="container contact-info">
                 <div class="section-header">
-                    <h2 class="section-title text-center wow fadeInDown">Contact Us</h2>
+                    <h2 class="section-title text-center wow fadeInDown" data-i18n="contact.heading">Contact Us</h2>
                     <p class="text-center wow fadeInDown"></p>
                 </div>
                 <div class="row">
@@ -181,21 +194,21 @@
                         <div class="contact-form">
 
                             <form id="main-contact-form" name="contact-form">
-                                <div class="form-group">
-                                    <input id="name" type="text" name="name" class="form-control" placeholder="Name" required>
+                                <div class="mb-3">
+                                    <input id="name" type="text" name="name" class="form-control" placeholder="Name" data-i18n="contact.namePlaceholder" data-i18n-attr="placeholder" required>
                                 </div>
-                                <div class="form-group">
-                                    <input id="email" type="email" name="email" class="form-control" placeholder="Email" required>
+                                <div class="mb-3">
+                                    <input id="email" type="email" name="email" class="form-control" placeholder="Email" data-i18n="contact.emailPlaceholder" data-i18n-attr="placeholder" required>
                                 </div>
-                                <div class="form-group">
+                                <div class="mb-3">
                                     <input id="subject" type="text" name="subject" class="form-control" placeholder="Subject"
-                                        required>
+                                        data-i18n="contact.subjectPlaceholder" data-i18n-attr="placeholder" required>
                                 </div>
-                                <div class="form-group">
+                                <div class="mb-3">
                                     <textarea id="msgBody" name="message" class="form-control" rows="8" placeholder="Message"
-                                        required></textarea>
+                                        data-i18n="contact.messagePlaceholder" data-i18n-attr="placeholder" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary" onclick="sendEmail()"">Send Message</button>
+                                <button type="submit" class="btn btn-primary" onclick="sendEmail()" data-i18n="contact.send">Send Message</button>
                             </form>
                         </div>
                     </div>
@@ -214,21 +227,25 @@
     </div>
 
     <!--/#footer-->
-    
+
     <script src="js/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/i18n.js"></script>
 
     <script>
         $(function(){
-            $("#nav-placeholder").load("nav.html");
-            $("#portfolio_list").load("portfolio.html");
-            $("#resources_list").load("resources.html");
-            $("#footer-placeholder").load("footer.html");        
-          });
+            I18n.init().then(function(){
+                I18n.applyTo(document.body);
+                $("#nav-placeholder").load("nav.html", function(){ I18n.applyTo(this); });
+                $("#portfolio_list").load("portfolio.html", function(){ initPortfolio(); });
+                $("#resources_list").load("resources.html", function(){ I18n.applyTo(this); });
+                $("#footer-placeholder").load("footer.html");
+            });
+        });
     </script>
-    <!-- <script src="js/including.js"></script>  -->
     <script src="js/mousescroll.js"></script>
     <script src="js/smoothscroll.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/glightbox.min.js"></script>
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/jquery.inview.min.js"></script>
     <script src="js/wow.min.js"></script>

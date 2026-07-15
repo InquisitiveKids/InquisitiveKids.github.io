@@ -1,0 +1,37 @@
+{
+  "nav.home": "Home",
+  "nav.about": "About",
+  "nav.projects": "Projects",
+  "nav.team": "Team",
+  "nav.resources": "Resource",
+  "nav.resources.worksheets": "Math Worksheets",
+  "nav.resources.competition": "Math Competition collection",
+  "nav.resources.lessons": "Free online lessons",
+  "nav.resources.workbooks": "Workbooks",
+  "nav.contact": "Contact",
+
+  "hero.title": "Three Inquisitive Kids: Find passion in learning!",
+  "hero.subtitle": "A place for all to learn and grow.",
+  "hero.cta": "More about us!",
+
+  "about.heading": "About Us",
+  "about.subheading": "Learn more about us!",
+  "about.groupTitle": "Our Group",
+  "about.cta": "Learn More",
+
+  "stats.siblings": "Siblings",
+  "stats.videos": "Tutorial Videos",
+  "stats.worksheets": "Free Worksheets",
+
+  "team.heading": "We Three Together",
+  "team.subheading": "We Make it Happen Together!",
+
+  "resources.heading": "Useful Resources",
+
+  "contact.heading": "Contact Us",
+  "contact.namePlaceholder": "Name",
+  "contact.emailPlaceholder": "Email",
+  "contact.subjectPlaceholder": "Subject",
+  "contact.messagePlaceholder": "Message",
+  "contact.send": "Send Message"
+}

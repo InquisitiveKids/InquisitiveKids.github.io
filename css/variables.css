@@ -1,0 +1,47 @@
+/*
+ * Design tokens for Three Inquisitive Kids.
+ * Single source of truth for color and type. See css/CLAUDE.md before
+ * adding new colors or fonts.
+ *
+ * Two-color brand system:
+ *  - GREEN is the primary/identity color (ties to the sprout logo and the
+ *    "learn & grow" tagline) — headings, links, nav highlights, badges.
+ *  - ORANGE is the secondary/energy color, reserved for calls to action
+ *    (buttons, the "featured" flag) so it keeps its punch instead of being
+ *    diluted across every element.
+ */
+
+:root {
+    /* Primary — green (brand / identity / info) */
+    --green: #2FA84F;
+    --green-strong: #1E7A38;
+    /* body-text-safe shade for links */
+    --green-dark: #175C2A;
+    /* deep shade for text on light-green backgrounds */
+    --green-soft: #E7F6EA;
+    /* pale tint for hover backgrounds */
+
+    /* Secondary — orange (calls to action / energy / highlights) */
+    --orange: #F4623A;
+    --orange-hover: #D94E27;
+    --orange-soft: #FFE3D6;
+
+    /* Neutrals */
+    --ink: #282828;
+    --ink-soft: #585858;
+    --surface: #ffffff;
+    --surface-alt: #f5faf6;
+    --border: #E7ECE8;
+
+    /* Dark UI (navbar, footer text on dark backgrounds) */
+    --dark-bg: #1f1f1f;
+
+    /* Typography */
+    --font-body: 'Nunito', sans-serif;
+    --font-heading: 'Baloo 2', 'Nunito', sans-serif;
+
+    /* Shape language shared by team/resource/portfolio cards */
+    --card-radius: 14px;
+    --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --card-shadow-hover: 0 10px 28px rgba(47, 168, 79, 0.22);
+}
